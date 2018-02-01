@@ -1,8 +1,5 @@
 function Thermostat() {
   this.temperature = 20;
-  // this.MAXTEMP = 32;
-  // this.MINTEMP = 10;
-  // this.PSMAXTEMP = 25;
   this.isPowersaving = true;
 };
 
@@ -16,18 +13,18 @@ Thermostat.prototype.reset = function() {
 
 
 Thermostat.prototype.up = function() {
-  if (this.temperature + 1 > this.MAXTEMP) {
-    throw new Error(`maximum temperature is ${this.MAXTEMP}`)
+  if (this.temperature + 1 > MAXTEMP) {
+    throw new Error(`maximum temperature is ${MAXTEMP}`)
   }
-  if (this.isPowersaving && (this.temperature + 1 > this.PSMAXTEMP)) {
-    throw new Error(`maximum temperature is ${this.PSMAXTEMP} in powersave mode`)
+  if (this.isPowersaving && (this.temperature + 1 > PSMAXTEMP)) {
+    throw new Error(`maximum temperature is ${PSMAXTEMP} in powersave mode`)
   }
     ++this.temperature
 };
 
 Thermostat.prototype.down = function() {
   if (this._isUnderMinTemp()) {
-    throw new Error(`minimum temperature is ${this.MINTEMP}`)
+    throw new Error(`minimum temperature is ${MINTEMP}`)
   }
     --this.temperature
 };
@@ -37,7 +34,7 @@ Thermostat.prototype.modeSwitch = function() {
 };
 
 Thermostat.prototype._isUnderMinTemp = function() {
-  return ((this.temperature - 1) < this.MINTEMP)
+  return ((this.temperature - 1) < MINTEMP)
 };
 
 Thermostat.prototype.usage = function() {

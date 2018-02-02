@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thermostat</title>
+    <script src="src/Thermostat.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <h1 id="temperature">Thermostat</h1>
+    <p>Current Temperature: <span id="currenttemp">x degrees</span></p>
+    <button id="temperatureup">+</button>
+    <button id="temperaturedown">-</button>
+    <button id="reset">Reset</button>
+    <p>Current Powersaving setting is: <span id="powersavingstatus">on/off</span></p>
+    <button id="switchmode">Switch Powersaving Mode</button>
+    <p>Current usage is: <span id="currentusage">currentusage</span></p>
+    <button id="usage">Current Usage</button>
+    <button id="ajax">Current weather</button>
+    <section>
+      <select id="cityoption">
+        <option value="london">London</option>
+        <option value="new york">New York</option>
+        <option value="paris">Paris</option>
+        <option value="tokyo">Tokyo</option>
+      </select>
+    </section>
+    <span id="ajaxresponse">here</span>
+  </body>
+</html>
